@@ -15,14 +15,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "make dir"
-          command: "mkdir build"
-      - run:
-          name: "build cmake cache"
-          command: "cd build; cmake ..; cd ../"
-      - run:
-          name: "cmake"
-          command: "cmake --build ./build --config Release --target all -j 8 --"
+          name: "build"
+          command: "sh .circleci/build.sh"
       - run:
           name: "run gtest"
           command: "./build/tests/GTest"
