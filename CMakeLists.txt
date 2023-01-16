@@ -28,7 +28,7 @@ target_link_directories(${ExecutableName} PUBLIC "${CMAKE_SOURCE_DIR}/build")
 target_link_libraries(${ExecutableName} ${LibraryName})
 
 if(NOT DEFINED ENV{CIRCLECI})
-deploy_lib("DebugTool" ${LibraryName} ${ProjectName})
+deploy_lib("test" ${LibraryName} ${ProjectName})
 add_subdirectory(libsources)
 endif()
 
