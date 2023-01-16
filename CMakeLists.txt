@@ -29,9 +29,9 @@ target_link_libraries(${ExecutableName} ${LibraryName})
 
 if(NOT DEFINED ENV{CIRCLECI})
 deploy_lib("DebugTool" ${LibraryName} ${ProjectName})
+add_subdirectory(libsources)
 endif()
 
-add_subdirectory(libsources)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
