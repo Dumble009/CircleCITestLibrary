@@ -1,11 +1,13 @@
-﻿if(NOT DEFINED TestName)
+﻿
 cmake_minimum_required(VERSION 3.14)
 project(test_project)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 17)
 
+if(NOT TARGET ${TestName})
 set(TestName GTest)
+
 
 include(FetchContent)
 FetchContent_Declare(

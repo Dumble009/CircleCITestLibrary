@@ -14,3 +14,8 @@ TEST(LinkTest, BasicAssertions)
 {
     EXPECT_EQ(1 + 2, testLib::add(1, 2));
 }
+
+TEST(LinkTest2, BasicAssertions)
+{
+    EXPECT_EQ(0 + 0, testLib::add(0, 0));
+}
