@@ -5,8 +5,8 @@ project(test_project)
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 17)
 
-if(NOT TARGET ${TestName})
 set(TestName GTest)
+if(NOT TARGET ${TestName})
 
 
 include(FetchContent)
