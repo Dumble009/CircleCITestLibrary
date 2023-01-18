@@ -1,4 +1,5 @@
-﻿cmake_minimum_required(VERSION 3.14)
+﻿if(NOT DEFINED TestName)
+cmake_minimum_required(VERSION 3.14)
 project(test_project)
 
 # GoogleTest requires at least C++14
@@ -22,8 +23,8 @@ add_executable(${TestName} ${TEST_SOURCES})
 
 target_include_directories(${TestName} PUBLIC "${CMAKE_SOURCE_DIR}/libsources")
 target_link_directories(${TestName} PUBLIC "${CMAKE_SOURCE_DIR}/build")
-target_link_libraries(${TestName} GTest::gtest_main CircleCITest
-) #その他必要なライブラリを適宜ここに追加する
+target_link_libraries(${TestName} GTest::gtest_main CircleCITest) #その他必要なライブラリを適宜ここに追加する
 
 include(GoogleTest)
 gtest_discover_tests(${TestName})
+endif()
